@@ -1,0 +1,35 @@
+# GitHub cannot switch pull requests off on a public repository, so this says
+# what the template says, on the way out.
+name: Redirect pull requests
+
+on:
+  pull_request_target:
+    types: [opened, reopened]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  redirect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const body = [
+              'Thanks for the patch!',
+              '',
+              'This repository is generated from [colyseus/native-sdk]' +
+              '(https://github.com/colyseus/native-sdk) on every release, and',
+              '`main` is replaced wholesale each time — a merge here would not',
+              'survive the next one.',
+              '',
+              'Please reopen this against `platforms/swift` in',
+              '[colyseus/native-sdk](https://github.com/colyseus/native-sdk).',
+            ].join('\n')
+            await github.rest.issues.createComment({
+              ...context.repo, issue_number: context.issue.number, body,
+            })
+            await github.rest.pulls.update({
+              ...context.repo, pull_number: context.issue.number, state: 'closed',
+            })
