@@ -34,7 +34,7 @@ let package = Package(
         .binaryTarget(
             name: "CColyseus",
             url: "https://github.com/colyseus/native-sdk/releases/download/v0.18.1/Colyseus.xcframework.zip",
-            checksum: "a0a9e528399d08004a589ba79b27b290185aea28d0ff08a06690945c94e5339b"
+            checksum: "153f2b4b6d15030d7547ded7734060998841cdd19d9a6bd5eb16d6f61654ba2a"
         ),
         .testTarget(
             name: "ColyseusTests",
