@@ -4,7 +4,7 @@ Swift over the [Colyseus native SDK](https://github.com/colyseus/native-sdk),
 for macOS, iOS and tvOS.
 
 ```swift
-.package(url: "https://github.com/colyseus/colyseus-swift", from: "0.18.2")
+.package(url: "https://github.com/colyseus/colyseus-swift", from: "0.18.3")
 ```
 
 ```swift
