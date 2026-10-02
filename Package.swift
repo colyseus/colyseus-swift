@@ -33,8 +33,8 @@ let package = Package(
         ),
         .binaryTarget(
             name: "CColyseus",
-            url: "https://github.com/colyseus/native-sdk/releases/download/v0.18.7/Colyseus.xcframework.zip",
-            checksum: "6f1fd06aab3c910cfb83a4f955308ff730e4f85b014523cbefa629ff723f3cc8"
+            url: "https://github.com/colyseus/native-sdk/releases/download/v0.18.8/Colyseus.xcframework.zip",
+            checksum: "a448fbd2f68ea1f3eeefcfd4996ed0ff3631b98bf39b617628d4988fcf299030"
         ),
         .testTarget(
             name: "ColyseusTests",
